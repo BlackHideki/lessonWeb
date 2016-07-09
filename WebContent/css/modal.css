@@ -1,0 +1,88 @@
+/* モーダルウインドウの格納 */
+#lean_overlay{
+	 position: fixed;
+	 z-index:1;
+	 top: 0px;
+	 left: 0px;
+	 height: 100%;
+	 width: 100%;
+	 background: black;
+	 display: none;
+}
+
+#div787{
+	z-index:2;
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	padding: 30px;
+	width: 400px;
+}
+#div788{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	padding: 30px;
+	width: 400px;
+}
+
+#div789{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	padding: 30px;
+	width: 400px;
+}
+
+#div790{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	padding: 30px;
+	width: 400px;
+}
+
+#heel_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+#summer_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+#winter_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+#planet_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+#kids_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+#cafe_t{
+	text-align: center;
+	background: none repeat scroll 0 0 white;
+	display: none;
+	width: 700px;
+}
+
+.modal_close{
+}
