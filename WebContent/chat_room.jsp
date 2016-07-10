@@ -15,6 +15,7 @@
 <title>Top | lessonWeb</title>
 </head>
 <body>
+<s:hidden id="chatListSize" name="chatList.size()"/>
 <h1>チャットルーム</h1>
 <div id="main">
 <fieldset>
@@ -22,10 +23,11 @@
 		<table>
 			<s:iterator value="chatList">
 				<tr>
-					<th><s:property value="msgTime"/>　<s:property value="name"/>様</th>
-				</tr>
-				<tr>
-					<td><s:property value="msgTime"/></td>
+					<th class="chat">
+						<s:hidden class="msgColor" name="msgColor"/>
+						<p><s:property value="msgTime"/>　<s:property value="name"/>様</p>
+						<s:property value="msg"/>
+					</th>
 				</tr>
 			</s:iterator>
 		</table>
@@ -44,10 +46,10 @@
 		<p>
 			<span id="black">■</span><span id="red">■</span><span id="green">■</span>
 		</p>
-		<s:hidden id="msgColor" name="msgColor"/>
+		<s:hidden id="pushMsgColor" name="pushMsgColor"/>
 		<p><s:submit value="送信"/></p>
 	</s:form>
-	<a href="<s:url action="SelectChat"/>"><button>更新</button></a>
+	<a href="<s:url action="SelectChat"/>"><button id="update">更新</button></a>
 </fieldset>
 </div>
 </body>

@@ -15,7 +15,7 @@ public class InsertChatAction extends ActionSupport {
 
 	public String name;
 
-	public String msgColor;
+	public String pushMsgColor;
 
 	public String msg;
 
@@ -23,16 +23,15 @@ public class InsertChatAction extends ActionSupport {
 
 	public String execute(){
 		String result = ERROR;
-
 		if(name != null){
 			if(name.equals("")){
 				name = null;
 			}
 		}
 
-		if(msgColor != null){
-			if(msgColor.equals("")){
-				msgColor = null;
+		if(pushMsgColor != null){
+			if(pushMsgColor.equals("")){
+				pushMsgColor = null;
 			}
 		}
 
@@ -46,7 +45,7 @@ public class InsertChatAction extends ActionSupport {
 
 		ChatDAO dao = new ChatDAO();
 
-		insertFlg = dao.insert(name, msgColor, msg);
+		insertFlg = dao.insert(name, pushMsgColor, msg);
 
 		if(insertFlg > 0){
 			result = SUCCESS;

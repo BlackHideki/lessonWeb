@@ -56,6 +56,7 @@ public class ChatDAO {
 			while(rs.next()){
 				ChatDTO dto = new ChatDTO();
 				dto.setId(rs.getInt("id"));
+				dto.setMsgTime(rs.getString("msg_time"));
 				dto.setName(rs.getString("name"));
 				dto.setMsgColor(rs.getString("msg_color"));
 				dto.setMsg(rs.getString("msg"));
