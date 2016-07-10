@@ -9,14 +9,6 @@
 <title>Top | lessonWeb</title>
 </head>
 <body>
-<h1>チャットルーム</h1>
-<div id="main">
-	<fieldset>
-	<p>名前<p>
-	<p><s:textfield name="name"/></p>
-	<p>内容</p>
-	<p><s:textarea cols="30" rows="10" name="msg"/></p>
-	</fieldset>
-</div>
+<a href="<s:url action="SelectChat"/>"><button>チャットルームへ</button></a>
 </body>
 </html>
