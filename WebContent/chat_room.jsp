@@ -12,7 +12,7 @@
 
 <!-- js読み込み -->
 <script src="js/chat_room.js"></script>
-<title>Top | lessonWeb</title>
+<title>チャットルーム | lessonWeb</title>
 </head>
 <body>
 <s:hidden id="chatListSize" name="chatList.size()"/>
@@ -25,8 +25,7 @@
 				<tr>
 					<th class="chat">
 						<s:hidden class="msgColor" name="msgColor"/>
-						<p><s:property value="msgTime"/>　<s:property value="name"/>様</p>
-						<s:property value="msg"/>
+						<p><s:property value="msgTime"/>　<s:property value="name"/>様&nbsp;：&emsp;<s:property value="msg"/></p>
 					</th>
 				</tr>
 			</s:iterator>

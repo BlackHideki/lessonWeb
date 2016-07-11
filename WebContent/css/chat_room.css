@@ -2,6 +2,10 @@ h1{
 	text-align: center;
 }
 
+.chat{
+	float: left;
+}
+
 #black{
 	color: black;
 	cursor: pointer;

@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <!-- css読み込み -->
-<link rel="stylesheet" href="css/top.css"/>
-<title>Top | lessonWeb</title>
+<link rel="stylesheet" href="css/top.css">
+<title>トップ | lessonWeb</title>
 </head>
 <body>
-<a href="<s:url action="SelectChat"/>"><button>チャットルームへ</button></a>
+<h1>トップ</h1>
+<a href="chat_room_info.jsp"><button>チャットルームへ</button></a>
 </body>
 </html>
