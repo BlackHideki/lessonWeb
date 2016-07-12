@@ -1,5 +1,5 @@
 $(function(){
-	var chatListSize = $("#chatListSize").val();
+	var postListSize = $("#postListSize").val();
 
 	var msgColor = $(".msgColor");
 
@@ -9,7 +9,7 @@ $(function(){
 
 	var greenBtn = $("#green");
 
-	var chat = $(".chat");
+	var post = $(".post");
 
 	var pushMsgColor = $("#pushMsgColor");
 
@@ -23,13 +23,13 @@ $(function(){
 
 	blackBtn.text(choice);
 
-	for(var i = 0; i < chatListSize; i++){
+	for(var i = 0; i < postListSize; i++){
 		if(msgColor.eq(i).val() == "black"){
-			chat.eq(i).css("color", "black");
+			post.eq(i).css("color", "black");
 		}else if(msgColor.eq(i).val() == "red"){
-			chat.eq(i).css("color", "red");
+			post.eq(i).css("color", "red");
 		}else{
-			chat.eq(i).css("color", "green");
+			post.eq(i).css("color", "green");
 		}
 	}
 

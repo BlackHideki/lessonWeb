@@ -5,25 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <!-- css読み込み -->
-<link rel="stylesheet" href="css/chat_room.css"/>
+<link rel="stylesheet" href="css/bulletin_board.css"/>
 
 <!-- jQuery読み込み -->
 <script src="js/jquery-3.0.0.min.js"></script>
 
 <!-- js読み込み -->
-<script src="js/chat_room.js"></script>
-<title>チャットルーム | lessonWeb</title>
+<script src="js/bulletin_board.js"></script>
+<title>掲示板 | lessonWeb</title>
 </head>
 <body>
-<s:hidden id="chatListSize" name="chatList.size()"/>
+<s:hidden id="postListSize" name="postList.size()"/>
 <h1>チャットルーム</h1>
 <div id="main">
 <fieldset>
 	<s:if test="errorMsg == null">
 		<table>
-			<s:iterator value="chatList">
+			<s:iterator value="postList">
 				<tr>
-					<th class="chat">
+					<th class="post">
 						<s:hidden class="msgColor" name="msgColor"/>
 						<p><s:property value="msgTime"/>　<s:property value="name"/>様&nbsp;：&emsp;<s:property value="msg"/></p>
 					</th>
@@ -37,7 +37,7 @@
 </fieldset>
 
 <fieldset>
-	<s:form action="InsertChat">
+	<s:form action="InsertPost">
 		<p>名前<p>
 		<p><s:textfield name="name"/></p>
 		<p>内容</p>
@@ -48,7 +48,7 @@
 		<s:hidden id="pushMsgColor" name="pushMsgColor"/>
 		<p><s:submit value="送信"/></p>
 	</s:form>
-	<a href="<s:url action="SelectChat"/>"><button id="update">更新</button></a>
+	<a href="<s:url action="SelectPost"/>"><button id="update">更新</button></a>
 </fieldset>
 </div>
 </body>

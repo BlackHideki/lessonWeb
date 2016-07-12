@@ -4,13 +4,19 @@
 <struts>
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="action" extends="struts-default">
-		<action name="SelectChat" class="action.SelectChatAction">
-			<result name="success">chat_room.jsp</result>
+
+		<action name="SelectPost" class="action.SelectPostAction">
+			<result name="success">bulletin_board.jsp</result>
 		</action>
 
-		<action name="InsertChat" class="action.InsertChatAction">
-			<result name="success" type="chain">SelectChat</result>
-			<result name="error">chat_room.jsp</result>
+		<action name="InsertPost" class="action.InsertPostAction">
+			<result name="success" type="chain">SelectPost</result>
+			<result name="error">bulletin_board.jsp</result>
+		</action>
+
+		<action name="SelectChatRoom" class="action.SelectChatRoomAction">
+			<result name="success">chat_room_info.jsp</result>
+			<result name="error">chat_room_info.jsp</result>
 		</action>
 	</package>
 </struts>

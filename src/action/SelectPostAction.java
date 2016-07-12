@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.ChatDAO;
-import dto.ChatDTO;
+import dao.PostDAO;
+import dto.PostDTO;
 
 /**
  * InsertChatAction
@@ -14,17 +14,17 @@ import dto.ChatDTO;
  * @since 2016/07/10
  * @version 1.0
  */
-public class SelectChatAction extends ActionSupport {
+public class SelectPostAction extends ActionSupport {
 
-	public ArrayList<ChatDTO> chatList;
+	public ArrayList<PostDTO> postList;
 
 	public String errorMsg;
 
 	public String execute(){
-		ChatDAO dao = new ChatDAO();
-		chatList = dao.select();
+		PostDAO dao = new PostDAO();
+		postList = dao.select();
 
-		if(chatList.size() == 0){
+		if(postList.size() == 0){
 			errorMsg = "チャット内容がありません";
 		}
 

@@ -2,16 +2,16 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.ChatDAO;
+import dao.PostDAO;
 
 /**
- * InsertChatAction
+ * InsertPostAction
  * チャット内容の送信する為のクラス
  * @author HIDEKI KUDO
  * @since 2016/07/10
  * @version 1.0
  */
-public class InsertChatAction extends ActionSupport {
+public class InsertPostAction extends ActionSupport {
 
 	public String name;
 
@@ -43,7 +43,7 @@ public class InsertChatAction extends ActionSupport {
 
 		int insertFlg = 0;
 
-		ChatDAO dao = new ChatDAO();
+		PostDAO dao = new PostDAO();
 
 		insertFlg = dao.insert(name, pushMsgColor, msg);
 

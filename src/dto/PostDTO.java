@@ -1,6 +1,6 @@
 package dto;
 
-public class ChatDTO {
+public class PostDTO {
 
 	private int id;
 

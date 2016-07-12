@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import dto.ChatDTO;
+import dto.PostDTO;
 import util.MySQLConnector;
 
-public class ChatDAO {
+public class PostDAO {
 
 	public int insert(String name, String msgColor, String msg){
 		int result = 0;
 
 		Connection con = new MySQLConnector().getConnection();
 
-		String sql = "INSERT INTO chat(msg_time, name, msg_color, msg)values(?, ?, ?, ?)";
+		String sql = "INSERT INTO post(msg_time, name, msg_color, msg)values(?, ?, ?, ?)";
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
@@ -42,19 +42,19 @@ public class ChatDAO {
 		return result;
 	}
 
-	public ArrayList<ChatDTO> select(){
-		ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+	public ArrayList<PostDTO> select(){
+		ArrayList<PostDTO> list = new ArrayList<PostDTO>();
 
 		Connection con = new MySQLConnector().getConnection();
 
-		String sql = "SELECT * FROM chat";
+		String sql = "SELECT * FROM post";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 
 			while(rs.next()){
-				ChatDTO dto = new ChatDTO();
+				PostDTO dto = new PostDTO();
 				dto.setId(rs.getInt("id"));
 				dto.setMsgTime(rs.getString("msg_time"));
 				dto.setName(rs.getString("name"));
