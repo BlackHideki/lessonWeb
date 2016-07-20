@@ -10,7 +10,6 @@
 </head>
 <body>
 <h1>トップ</h1>
-<a href="bulletin_board_info.jsp"><button>掲示板</button></a>
-<a href="<s:url action="SelectChatRoom"/>"><button>チャットルーム</button></a>
+<a href="<s:url action="SelectChatRoom"/>"><button>チャットルーム一覧へ</button></a>
 </body>
 </html>

@@ -5,19 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <!-- css読み込み -->
-<link rel="stylesheet" href="css/bulletin_board.css"/>
+<link rel="stylesheet" href="css/chat_room.css"/>
 
 <!-- jQuery読み込み -->
 <script src="js/jquery-3.0.0.min.js"></script>
 
 <!-- js読み込み -->
-<script src="js/bulletin_board.js"></script>
-<title>掲示板 | lessonWeb</title>
+<script src="js/chat_room.js"></script>
+<title>チャットルーム | lessonWeb</title>
 </head>
 <body>
 <s:hidden id="postListSize" name="postList.size()"/>
 <h1>チャットルーム</h1>
 <div id="main">
+<s:hidden name="id" value="id"/>
 <fieldset>
 	<s:if test="errorMsg == null">
 		<table>
@@ -25,7 +26,7 @@
 				<tr>
 					<th class="post">
 						<s:hidden class="msgColor" name="msgColor"/>
-						<p><s:property value="msgTime"/>　<s:property value="name"/>様&nbsp;：&emsp;<s:property value="msg"/></p>
+						<p><s:property value="msgTime"/><s:property value="name"/>様&nbsp;：&emsp;<s:property value="msg"/></p>
 					</th>
 				</tr>
 			</s:iterator>

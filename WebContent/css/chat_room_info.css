@@ -10,3 +10,12 @@ table{
 th, td{
 	border: solid 1px black;
 }
+
+#errorMsg{
+	color: red;
+	text-align: center;
+}
+
+#createChatRoomBtn{
+	text-align: center;
+}

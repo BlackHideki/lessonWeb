@@ -6,15 +6,25 @@
 	<package name="action" extends="struts-default">
 
 		<action name="SelectPost" class="action.SelectPostAction">
-			<result name="success">bulletin_board.jsp</result>
+			<result name="success">chat_room.jsp</result>
 		</action>
 
 		<action name="InsertPost" class="action.InsertPostAction">
 			<result name="success" type="chain">SelectPost</result>
-			<result name="error">bulletin_board.jsp</result>
+			<result name="error">chat_room.jsp</result>
 		</action>
 
 		<action name="SelectChatRoom" class="action.SelectChatRoomAction">
+			<result name="success">chat_room_info.jsp</result>
+			<result name="error">chat_room_info.jsp</result>
+		</action>
+
+		<action name="CreateChatRoom" class="action.CreateChatRoomAction">
+			<result name="success" type="chain">SelectChatRoom</result>
+			<result name="error">chat_room_info.jsp</result>
+		</action>
+
+		<action name="DeleteChatRoom" class="action.DeleteChatRoomAction">
 			<result name="success">chat_room_info.jsp</result>
 			<result name="error">chat_room_info.jsp</result>
 		</action>

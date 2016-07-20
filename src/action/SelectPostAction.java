@@ -16,18 +16,49 @@ import dto.PostDTO;
  */
 public class SelectPostAction extends ActionSupport {
 
-	public ArrayList<PostDTO> postList;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 4666537185685793021L;
 
-	public String errorMsg;
+	private ArrayList<PostDTO> postList;
+
+	private int id;
+
+	private String errorMsg;
 
 	public String execute(){
 		PostDAO dao = new PostDAO();
-		postList = dao.select();
+		postList = dao.select(id);
 
 		if(postList.size() == 0){
 			errorMsg = "チャット内容がありません";
 		}
 
 		return SUCCESS;
+	}
+
+	public ArrayList<PostDTO> getPostList() {
+		return postList;
+	}
+
+	public void setPostList(ArrayList<PostDTO> postList) {
+		this.postList = postList;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 }

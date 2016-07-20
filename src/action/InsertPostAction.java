@@ -13,16 +13,24 @@ import dao.PostDAO;
  */
 public class InsertPostAction extends ActionSupport {
 
-	public String name;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 3419628741932614525L;
 
-	public String pushMsgColor;
+	private int id;
 
-	public String msg;
+	private String name;
 
-	public String errorMsg;
+	private String pushMsgColor;
+
+	private String msg;
+
+	private String errorMsg;
 
 	public String execute(){
 		String result = ERROR;
+
 		if(name != null){
 			if(name.equals("")){
 				name = null;
@@ -41,17 +49,51 @@ public class InsertPostAction extends ActionSupport {
 			}
 		}
 
-		int insertFlg = 0;
-
-		PostDAO dao = new PostDAO();
-
-		insertFlg = dao.insert(name, pushMsgColor, msg);
-
-		if(insertFlg > 0){
+		if(new PostDAO().insert(id, name, pushMsgColor, msg) > 0){
 			result = SUCCESS;
 		}else{
 			errorMsg = "送信に失敗しました";
 		}
 		return result;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPushMsgColor() {
+		return pushMsgColor;
+	}
+
+	public void setPushMsgColor(String pushMsgColor) {
+		this.pushMsgColor = pushMsgColor;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 }

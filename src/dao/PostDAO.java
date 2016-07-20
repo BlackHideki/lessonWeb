@@ -12,29 +12,30 @@ import util.MySQLConnector;
 
 public class PostDAO {
 
-	public int insert(String name, String msgColor, String msg){
+	public int insert(int id, String name, String msgColor, String msg){
 		int result = 0;
 
-		Connection con = new MySQLConnector().getConnection();
+		Connection conn = new MySQLConnector().getConnection();
 
-		String sql = "INSERT INTO post(msg_time, name, msg_color, msg)values(?, ?, ?, ?)";
+		String sql = "INSERT INTO post(id, msg_time, name, msg_color, msg)values(?, ?, ?, ?)";
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
 		String date = sdf.format(System.currentTimeMillis());
 
 		try{
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, date);
-			ps.setString(2, name);
-			ps.setString(3, msgColor);
-			ps.setString(4, msg);
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ps.setString(2, date);
+			ps.setString(3, name);
+			ps.setString(4, msgColor);
+			ps.setString(5, msg);
 			result = ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			try{
-				con.close();
+				conn.close();
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
@@ -42,15 +43,16 @@ public class PostDAO {
 		return result;
 	}
 
-	public ArrayList<PostDTO> select(){
+	public ArrayList<PostDTO> select(int id){
 		ArrayList<PostDTO> list = new ArrayList<PostDTO>();
 
 		Connection con = new MySQLConnector().getConnection();
 
-		String sql = "SELECT * FROM post";
+		String sql = "SELECT * FROM post WHERE id=?";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 
 			while(rs.next()){
