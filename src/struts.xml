@@ -5,6 +5,10 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<package name="action" extends="struts-default">
 
+	<action name="Search" class="action.SearchAction">
+			<result name="success">search.jsp</result>
+		</action>
+
 		<action name="SelectPost" class="action.SelectPostAction">
 			<result name="success">chat_room.jsp</result>
 		</action>

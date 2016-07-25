@@ -10,6 +10,10 @@
 </head>
 <body>
 <h1>トップ</h1>
-<a href="<s:url action="SelectChatRoom"/>"><button>チャットルーム一覧へ</button></a>
+<s:form action="Search">
+<p><s:textfield name="searchText"/><s:submit value="検索"/></p>
+</s:form>
+
+<p><a href="<s:url action="SelectChatRoom"/>"><button>チャットルーム一覧へ</button></a></p>
 </body>
 </html>
