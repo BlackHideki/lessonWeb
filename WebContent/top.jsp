@@ -15,5 +15,11 @@
 </s:form>
 
 <p><a href="<s:url action="SelectChatRoom"/>"><button>チャットルーム一覧へ</button></a></p>
+
+<s:form action="FileUp" method="post" enctype="multipart/form-data">
+	<p><s:file name="file"/><p>
+	<p><s:submit value="送信"/></p>
+</s:form>
+<s:property value="resultMsg"/>
 </body>
 </html>
