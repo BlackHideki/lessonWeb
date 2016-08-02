@@ -11,6 +11,9 @@ public class DeleteChatRoomAction extends ActionSupport{
 	 */
 	private static final long serialVersionUID = 8690787898319224110L;
 
+	/**
+	 *
+	 */
 	private int id;
 
 	private String errorMsg;
